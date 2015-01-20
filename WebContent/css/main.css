@@ -17,24 +17,36 @@ body {
     padding:0px;
     height: 480px;
 }
-.wel-login-title {
-    height: 50px;
-    line-height: 50px;
-    font-size: 26px;
-    color: #FFF;
-    text-align: center;
-    background-color: #62AB00;
-    margin: 5px;
-}
 .log-title{
 	
 	border-bottom:2px solid  #8EC172;
 }
 .log-title div{
-	color: #8EC172;
+	color: #62AB00;
 	font-family: "Microsoft YaHei","微软雅黑",tahoma,arial,simhei;
 	font-size: 30px;
 	font-weight: bolder;
 	margin-left: 50px;
 	}
 	
+.input_box{
+	margin-top:25px;
+	text-align:left;
+}
+.input_all{
+	border:1px solid #ccc;
+	height:34px;
+	width:260px;
+	font-size:16px;
+	border-left:0;
+	padding-left:20px;
+}
+.input_box em{
+	clear:both;
+	width:35px;
+	height:38px;
+	display:block;
+	float:left;
+	margin-left:50px;
+	
+}

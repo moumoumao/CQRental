@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR//DTD S2Container//EN"
+"http://www.seasar.org/dtd/components2.1.dtd">
+<components namespace="j2ee">
+	<component name="transactionManager"
+		class="org.seasar.extension.jta.TransactionManagerImpl"/>
+	<component name="requiredTx"
+		class="org.seasar.extension.tx.RequiredInterceptor"/>
+	<component name="requiresNewTx"
+		class="org.seasar.extension.tx.RequiresNewInterceptor"/>
+	<component name="mandatoryTx"
+		class="org.seasar.extension.tx.MandatoryInterceptor"/>
+	<component name="notSupportedTx"
+		class="org.seasar.extension.tx.NotSupportedInterceptor"/>
+
+	<component class="org.seasar.extension.jdbc.impl.BasicResultSetFactory"/>
+	<component class="org.seasar.extension.jdbc.impl.BasicStatementFactory"/>
+    <component name="xaDataSource"
+        class="org.seasar.extension.dbcp.impl.XADataSourceImpl">
+        <property name="driverClassName">
+            "org.postgresql.Driver"
+        </property>
+        <property name="URL">
+          "jdbc:postgresql://localhost:5432/MyTest"
+        </property>
+        <property name="user">"postgres"</property>
+        <property name="password">"123"</property>
+    </component>
+
+	<component name="connectionPool"
+		class="org.seasar.extension.dbcp.impl.ConnectionPoolImpl">
+		<property name="timeout">600</property>
+		<property name="maxPoolSize">10</property>
+		<!-- JTAトランザクションが開始されていない場合にコネクションを
+		     取得できないようにするには次のプロパティをfalseにしてください．-->
+		<property name="allowLocalTx">true</property>
+		<destroyMethod name="close"/>
+	</component>
+	<component name="dataSource"
+		class="org.seasar.extension.dbcp.impl.DataSourceImpl"/>
+</components>

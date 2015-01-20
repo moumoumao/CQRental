@@ -1,5 +1,30 @@
 @CHARSET "UTF-8";
-.title_div{
+.wel-login-title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    color: #FFF;
+    background-color: #8EC172;
+	margin-bottom:25px;
+}
+.left{
+	width:60%;
+	border-right: 1px solid #E3E3E3;
+	float:left;
+}
+.right{
+	width:30%;
+	float:left;
+}
+.user_img{
+	background:url(../img/user.png);
+}
+.pwd_img{
+	background:url(../img/pwd.png);
+}
+.show_div{
 	width: 700px;
 	height: 180px;
+    text-align: center;
+    margin: 5px auto;
 }

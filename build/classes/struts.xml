@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+      "-//Apache Software Foundation//DTD Struts Configuration 2.0//EN"
+      "http://struts.apache.org/dtds/struts-2.0.dtd">
+<struts>
+
+<!-- 请求参数的编码方式 -->  
+    <constant name="struts.i18n.encoding" value="UTF-8" />  
+    <!-- 指定被struts2处理的请求后缀类型。多个用逗号隔开 -->  
+    <!-- 当struts.xml改动后，是否重新加载。默认值为false(生产环境下使用),开发阶段最好打开 -->  
+    <constant name="struts.configuration.xml.reload" value="true" />  
+    <!-- 是否使用struts的开发模式。开发模式会有更多的调试信息。默认值为false(生产环境下使用),开发阶段最好打开 -->  
+    <constant name="struts.devMode" value="false" />  
+    <!-- 设置浏览器是否缓存静态内容。默认值为true(生产环境下使用),开发阶段最好关闭 -->  
+    <constant name="struts.serve.static.browserCache" value="false" />  
+    <!-- 指定由spring负责action对象的创建  
+    <constant name="struts.objectFactory" value="spring" />  
+    -->  
+    <!-- 是否开启动态方法调用 -->  
+    <constant name="struts.enable.DynamicMethodInvocation" value="true" />  
+    <!-- 源文件定义 -->
+   <!--  <constant name="struts.custom.i18n.resources" value="application_ja, config_web"/> -->
+
+<!-- 共通包 -->
+	<package name="defaultPackage" extends="struts-default">
+		<interceptors>
+			<!-- Seasar2 用拦截器 -->
+			<interceptor name="s2component"
+				class="org.seasar.xwork2.component.S2ComponentInterceptor" />
+			<interceptor-stack name="CommonInterceptorStack">
+				<interceptor-ref name="s2component" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="CommonInterceptorStack" />
+	</package>
+	<!-- 管理画面用包 -->
+	<package name="manage" extends="defaultPackage, json-default" namespace="/">
+	<interceptors>
+			<interceptor-stack name="ManageLoginInterceptorStack">
+				<interceptor-ref name="defaultStack" />
+				<interceptor-ref name="json"/>
+				<interceptor-ref name="CommonInterceptorStack" />
+			</interceptor-stack>
+		</interceptors>
+		<default-interceptor-ref name="ManageLoginInterceptorStack" />
+		 <action name="user" class="com.manage.action.UserAction" >
+        	 <result name="success">/login.jsp</result>
+        </action>
+	</package>
+	
+</struts>

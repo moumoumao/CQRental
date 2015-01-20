@@ -10,7 +10,21 @@
 <div id="container">
 	<div class="log-title"><div>宜居</div></div>
 	<div id="content">
-		<div class="title_div"><div class="wel-login-title">欢迎登录宜家</div></div>
+		<div class="show_div">
+        <div class="wel-login-title">欢迎登录宜居网</div>
+        <div class="left">
+             <div class="input_box">
+                <em class="user_img"></em><input  type="text" class="input_all" placeholder="请输入用户名"/>
+            </div>
+            <div class="input_box">
+                <em class="pwd_img"></em><input  type="password" class="input_all" placeholder="请输入密码"/>
+            </div>
+        </div>
+        <div class="right">      
+        </div>
+       
+        </div>
+        
 	</div>
 </div>
 
