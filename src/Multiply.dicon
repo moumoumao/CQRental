@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE components PUBLIC "-//SEASAR2.1//DTD S2Container//EN"
+  "http://www.seasar.org/dtd/components21.dtd">
+<components>
+	<include path="dao.dicon" />
+	<include path="aop.dicon" />
+	
+	<!--第一种dao层设置（但需每个dao都做配置）
+	<component class="manage.dao.UserDao">
+		<aspect>dao.interceptor</aspect>
+	</component>
+	-->
+ 
+	 <!--第二种dao层设置(只用配置do文件所在包即可)-->
+	 <component
+		class="org.seasar.framework.container.autoregister.FileSystemComponentAutoRegister">
+		<property name="autoBindingDef">
+			@org.seasar.framework.container.assembler.AutoBindingDefFactory@CONSTRUCTOR
+		</property>
+		<property name="autoNaming">
+			<component
+				class="org.seasar.framework.container.autoregister.DefaultAutoNaming" />
+		</property>
+		<initMethod name="addClassPattern">
+			<arg>"manage.dao"</arg>
+			<arg>".*Dao"</arg>
+		</initMethod>
+	</component> 
+	<component
+		class="org.seasar.framework.container.autoregister.AspectAutoRegister">
+		<property name="interceptor">
+			aop.traceInterceptorChain
+		</property>
+		<initMethod name="addClassPattern">
+			<arg>"manage.dao"</arg>
+			<arg>".*Dao"</arg>
+		</initMethod>
+	</component>
+	<component
+		class="org.seasar.framework.container.autoregister.AspectAutoRegister">
+		<property name="interceptor">dao.interceptor</property>
+		<initMethod name="addClassPattern">
+			<arg>"manage.dao"</arg>
+			<arg>".*Dao"</arg>
+		</initMethod>
+	</component> 
+	<!--第二种dao层设置结束-->
+    
+    
+	<!--这是对service层的管理接口注入-->
+  <component
+      class="org.seasar.framework.container.autoregister.FileSystemComponentAutoRegister">
+    <property name="autoNaming">
+      <component class="org.seasar.framework.container.autoregister.DefaultAutoNaming"/>
+    </property>
+    <initMethod name="addClassPattern">
+      <arg>"manage"</arg>
+      <arg>".*LogicImpl"</arg>
+    </initMethod>
+  </component>
+  <!--对service层的管理结束-->
+  
+  
+  <!--这是对action层的管理接口注入-->
+  <component
+      class="org.seasar.framework.container.autoregister.FileSystemComponentAutoRegister">
+    <property name="instanceDef">
+      @org.seasar.framework.container.deployer.InstanceDefFactory@REQUEST
+    </property>
+    <property name="autoBindingDef">
+			@org.seasar.framework.container.assembler.AutoBindingDefFactory@CONSTRUCTOR
+	</property>
+    <property name="autoNaming">
+      <component class="org.seasar.framework.container.autoregister.DefaultAutoNaming"/>
+    </property>
+    <initMethod name="addClassPattern">
+      <arg>"manage.action"</arg>
+      <arg>".*Action"</arg>
+    </initMethod>
+  </component>
+  <component class="org.seasar.framework.container.autoregister.AspectAutoRegister">
+    <property name="interceptor">traceInterceptor</property>
+    <initMethod name="addClassPattern">
+      <arg>"manage.action"</arg>
+      <arg>".*Action"</arg>
+    </initMethod>
+  </component>
+  	<component class="org.seasar.framework.container.autoregister.AspectAutoRegister">
+		<property name="interceptor">aop.traceInterceptorChain</property>
+		<initMethod name="addClassPattern">
+			<arg>"manage.action"</arg>
+			<arg>".*Action"</arg>
+		</initMethod>
+	</component>
+  <!-- 对action层的管理结束-->
+</components>

@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+#container {
+    width: 100%;
+}
+body {
+    color: #333;
+    font-family: Arial,"宋体",Helvetica,sans-serif;
+    font-size: 12px;
+    margin:0px;
+    padding:0px;
+}
+#content {
+	width: 100%;
+    background: url("/CQRental/img/userBg.jpg") no-repeat scroll 0px 0px transparent;
+    font-family: "Microsoft YaHei","微软雅黑",tahoma,arial,simhei;
+    margin:0px;
+    padding:0px;
+    height: 480px;
+}
+.wel-login-title {
+    height: 50px;
+    line-height: 50px;
+    font-size: 26px;
+    color: #FFF;
+    text-align: center;
+    background-color: #62AB00;
+    margin: 5px;
+}
+.log-title{
+	
+	border-bottom:2px solid  #8EC172;
+}
+.log-title div{
+	color: #8EC172;
+	font-family: "Microsoft YaHei","微软雅黑",tahoma,arial,simhei;
+	font-size: 30px;
+	font-weight: bolder;
+	margin-left: 50px;
+	}
+	
