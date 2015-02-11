@@ -11,12 +11,6 @@ import javax.servlet.ServletResponse;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-
-/**
- * 登录过滤器
- * @author jy
- *
- */
 public class LoginFilter implements Filter {
 
 	public void destroy() {
@@ -27,14 +21,13 @@ public class LoginFilter implements Filter {
 			FilterChain chain) throws IOException, ServletException {
 		HttpServletRequest  httpReq  = (HttpServletRequest) request;  
         HttpServletResponse httpResp = (HttpServletResponse) response; 
-        HttpSession session=httpReq.getSession();//获取session
-        String path = httpReq.getServletPath();//获取当前请求页面地址
+        HttpSession session=httpReq.getSession();
+        String path = httpReq.getServletPath();
         String name = httpReq.getServerName();
         System.out.println("path:"+path+"\nname:"+name);
         if(path.equals("/login.jsp")){
-        	chain.doFilter(request, response);//为登录界面跳过该操作
+        	chain.doFilter(request, response);
         }else if(session==null||session.getAttribute("user")==null){
-        	//用户还未登陆
         	httpResp.sendRedirect("login.jsp");
         }else{
         	chain.doFilter(request, response);

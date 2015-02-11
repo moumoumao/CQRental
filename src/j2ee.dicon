@@ -24,7 +24,7 @@
           "jdbc:postgresql://localhost:5432/MyTest"
         </property>
         <property name="user">"postgres"</property>
-        <property name="password">"123"</property>
+        <property name="password">"123456"</property>
     </component>
 
 	<component name="connectionPool"

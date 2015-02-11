@@ -2,9 +2,17 @@
     pageEncoding="utf-8"%>
 <html>
 <head>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
 <link rel="stylesheet" href="/CQRental/css/main.css" type="text/css"></link>
 <link rel="stylesheet" href="/CQRental/css/login.css" type="text/css"></link>
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link href="css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/bootstrap.min.css" type="text/css"></link>
+<link rel="stylesheet" href="css/bootstrap-theme.min.css" type="text/css"></link>
 <title>登录</title>
+<script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
+<script src="js/bootstrap.min.js"></script>
 </head>
 <body>
 <div id="container">

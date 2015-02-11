@@ -43,7 +43,7 @@
 			</interceptor-stack>
 		</interceptors>
 		<default-interceptor-ref name="ManageLoginInterceptorStack" />
-		 <action name="user" class="com.manage.action.UserAction" >
+		 <action name="user" class="manage.action.UserAction" >
         	 <result name="success">/login.jsp</result>
         </action>
 	</package>

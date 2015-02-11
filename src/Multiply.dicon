@@ -55,7 +55,7 @@
     </property>
     <initMethod name="addClassPattern">
       <arg>"manage"</arg>
-      <arg>".*LogicImpl"</arg>
+      <arg>".*ServiceImpl"</arg>
     </initMethod>
   </component>
   <!--对service层的管理结束-->
