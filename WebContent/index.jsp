@@ -12,6 +12,7 @@
 <script src="http://cdn.bootcss.com/jquery/1.11.2/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
 <script type="text/javascript">
+var height = 0;
 $(function(){
 	$('.carousel').carousel({
   		interval: 3000 
@@ -33,15 +34,15 @@ $(function(){
 <nav class="navbar navbar-inverse navbar-fixed-top">
   <div class="container">
     <div class="navbar-header">
-      <a class="navbar-brand" href="#">宜居网</a>
+      <a class="navbar-brand" href="#">网站</a>
     </div>
 
     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       <ul class="nav navbar-nav">
         <li class="active"><a href="#">首页<span class="sr-only">(current)</span></a></li>
-        <li><a href="#">新房</a></li>
-        <li><a href="/CQRental/manage/house_list.jsp" target="menuFrame">二手房</a></li>
-        <li><a href="#">合租房</a></li>
+        <li><a href="#">item1</a></li>
+        <li><a href="/CQRental/manage/house_list.jsp" target="menuFrame">list</a></li>
+        <li><a href="#">item3</a></li>
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">下拉列表 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
@@ -75,11 +76,9 @@ $(function(){
     </div>
   </div>
 </nav>
-
 <div class="container">
 <iframe id="menuFrame" name="menuFrame" src="/CQRental/manage/main.jsp" 
-style="overflow: visible;margin-top: 55px;" scrolling="no" frameborder="no" width="100%"></iframe>
-
+style="overflow: visible;margin-top: 55px;" scrolling="no" frameborder="no" width="100%" ></iframe>
 </div>
 </body>
 </html>
