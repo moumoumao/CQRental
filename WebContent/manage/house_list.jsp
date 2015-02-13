@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; utf-8"
-    pageEncoding="utf-8"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
@@ -16,15 +15,27 @@
 }
 .info_list_right{
 margin-left:20px;
+width: 11%;
+color:#EB5F00;
+font-size:40px;
+font-weight:bold;
 float: left;
 }
 .info_list_mid{
+
 margin-left:20px;
 width:65%;
 float: left;
 }
 .clear{
 	clear: both;
+}
+.light{
+	color: #797979;
+	margin-right: 10px;
+}
+.badge{
+	float: right;
 }
 </style>
 <title>Insert title here</title>
@@ -40,10 +51,17 @@ float: left;
 	</div>
 	<div class="info_list_mid">
 	<h4>List group item heading</h4>
-	<span>107平方米 </span><span>3室2厅 </span><span>2873元/m </span><span>6/32层 </span><span>2012年建站 </span>
+	<span class="light">107平方米 </span><span class="light">|</span><span class="light">3室2厅 </span><span class="light">|</span>
+	<span class="light">2873元/m </span><span class="light">|</span><span class="light">6/32层 </span><span class="light">|</span>
+	<span class="light">2012年建站 </span>
+	<div class="light" style="margin:17px; ">
+	小区名  <span style="margin: 30px;"></span>[具体地址]
+	</div>
+	<span >小区名 </span> <span class="light">[具体地址] </span>
 	</div>
 	<div class="info_list_right">
-	<span class="badge">14</span>
+	<span class="badge" >14</span>
+	<div style="margin-top: 40px;">59</div>
 	</div>
   </div>
 </div>
