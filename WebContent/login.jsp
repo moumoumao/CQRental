@@ -21,12 +21,16 @@
 		<div class="show_div">
         <div class="wel-login-title">欢迎登录宜居网</div>
         <div class="left">
-             <div class="input_box">
-                <em class="user_img"></em><input  type="text" class="input_all" placeholder="请输入用户名"/>
+        <form action="user!doLogin.action" method="post">
+          <div class="input_box">
+                <em class="user_img"></em><input  type="text" class="input_all" name="userVo.loginName" placeholder="请输入用户名"/>
             </div>
             <div class="input_box">
-                <em class="pwd_img"></em><input  type="password" class="input_all" placeholder="请输入密码"/>
+                <em class="pwd_img"></em><input  type="password" class="input_all" name="userVo.userPwd" placeholder="请输入密码"/>
             </div>
+            <input type="submit">
+        </form>
+            
         </div>
         <div class="right">      
         </div>
