@@ -1,5 +1,7 @@
 package manage.dao;
 
+import java.util.List;
+
 import org.seasar.dao.annotation.tiger.Arguments;
 
 import manage.ViewObject.UserVo;
@@ -26,6 +28,21 @@ public interface UserDao {
 	 */
 	@Arguments({"loginName","userName","userTel","sex","userEmail","userAge","userBirth","userPwd","roleId"})
 	int insertUser(String loginName,String userName,String userTel,String sex,String userEmail,int userAge,String userBirth,String userPwd,int roleId);
+	/**
+	 * 组合查询用户信息
+	 * @param pageStart 开始条数
+	 * @param pageSize 页数
+	 * @param loginName 登录名
+	 * @param userName 昵称
+	 * @param sex 性别
+	 * @param userAge 年龄
+	 * @param userBirthStart 出身年月
+	 * @param userBirthEnd  出身年月
+	 * @param roleId 角色Id
+	 * @return
+	 */
+	@Arguments({"pageStart","pageSize","loginName","userName","sex","userAge","userBirthStart","userBirthEnd","roleId"})
+	List<UserVo> finduserListContext(int pageStart ,int pageSize,String loginName,String userName,String sex,int userAge,String userBirthStrat,String userBirthEnd,int roleId);
 
 
 }

@@ -1,6 +1,9 @@
 package manage.service;
 
+import java.util.List;
+
 import manage.ViewObject.UserVo;
+import manage.util.PageBean;
 
 public interface UserService {
 	/**
@@ -15,5 +18,13 @@ public interface UserService {
 	 * @return
 	 */
 	int addUser(UserVo user);
+	/**
+	 * 根据角色分页查找用户
+	 * @param roleId 角色ID
+	 * @param pageSize 页码
+	 * @param page
+	 * @return
+	 */
+	PageBean findByroleId(int roleId,int pageSize,int page);
 
 }

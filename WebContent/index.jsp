@@ -47,8 +47,8 @@ $(function(){
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">下拉列表 <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu">
             <li><a href="/CQRental/manage/houseinfo_create.jsp">新增</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="/CQRental/role!goRoleList.action" target="menuFrame">用户列表</a></li>
+            <li><a href="#">角色管理</a></li>
             <li class="divider"></li>
             <li><a href="#">Separated link</a></li>
             <li class="divider"></li>
@@ -66,7 +66,7 @@ $(function(){
         <li class="dropdown">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">${user.userName } <span class="caret"></span></a>
           <ul class="dropdown-menu" role="menu" >
-            <li><a href="#">个人中心</a></li>
+            <li><a href="/CQRental/manage/personal_center.jsp" target="menuFrame">个人中心</a></li>
             <li><a href="#">我的</a></li>
             <li class="divider"></li>
             <li><a href="#">退出登录</a></li>
