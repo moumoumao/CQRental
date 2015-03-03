@@ -26,5 +26,10 @@ public interface UserService {
 	 * @return
 	 */
 	PageBean findByroleId(int roleId,int pageSize,int page);
+	/**
+	 * 查找所有用户
+	 * @return
+	 */
+	List<UserVo> findAllUser();
 
 }

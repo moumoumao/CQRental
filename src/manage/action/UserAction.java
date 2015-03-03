@@ -3,6 +3,13 @@
  */
 package manage.action;
 
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import net.sf.json.JSONObject;
+
+import org.apache.struts2.ServletActionContext;
 import org.apache.struts2.convention.annotation.Result;
 import org.apache.struts2.convention.annotation.Results;
 
@@ -74,7 +81,15 @@ public class UserAction extends AbstractAction {
 	}
 	public void findByRole(){
 		pageBean = userService.findByroleId(userVo.getRoleId(), pageBean.getPageSize(), pageBean.getCurrentPage());
-		super.writeJson(pageBean);
+		try {
+			ServletActionContext.getResponse().getWriter().write((JSONObject.fromObject(pageBean)).toString());
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	public void findAllUser(){
+		super.writeJson(userService.findAllUser());
 	}
 	public UserVo getUserVo() {
 		return userVo;

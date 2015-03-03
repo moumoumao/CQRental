@@ -18,7 +18,11 @@ $(function(){
   		interval: 3000 
 	});
 	$('#menuFrame').load(function(){
-		var ifm= document.getElementById("menuFrame");  
+		getMenuHeight();
+	});
+});
+function getMenuHeight(){
+	var ifm= document.getElementById("menuFrame");  
 		var subWeb = document.frames ? document.frames["menuFrame"].document : ifm.contentDocument;  
 		if(ifm != null && subWeb != null) {
 			ifm.height = subWeb.body.scrollHeight;
@@ -26,8 +30,7 @@ $(function(){
 			height=0;
 			ifm.width = subWeb.body.scrollWidth;
 		} 
-	});
-});
+}
 </script>
 </head>
 <body>

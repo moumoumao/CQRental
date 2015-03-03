@@ -43,5 +43,11 @@ public class UserServiceImpl implements UserService{
 		return pageBean;
 	}
 
+	@Override
+	public List<UserVo> findAllUser() {
+		// TODO Auto-generated method stub
+		return userDao.findAllUser();
+	}
+
 
 }

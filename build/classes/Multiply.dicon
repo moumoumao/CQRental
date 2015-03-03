@@ -78,19 +78,6 @@
       <arg>".*Action"</arg>
     </initMethod>
   </component>
-  <component class="org.seasar.framework.container.autoregister.AspectAutoRegister">
-    <property name="interceptor">traceInterceptor</property>
-    <initMethod name="addClassPattern">
-      <arg>"manage.action"</arg>
-      <arg>".*Action"</arg>
-    </initMethod>
-  </component>
-  	<component class="org.seasar.framework.container.autoregister.AspectAutoRegister">
-		<property name="interceptor">aop.traceInterceptorChain</property>
-		<initMethod name="addClassPattern">
-			<arg>"manage.action"</arg>
-			<arg>".*Action"</arg>
-		</initMethod>
-	</component>
+  
   <!-- 对action层的管理结束-->
 </components>

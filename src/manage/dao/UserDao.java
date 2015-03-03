@@ -43,6 +43,10 @@ public interface UserDao {
 	 */
 	@Arguments({"pageStart","pageSize","loginName","userName","sex","userAge","userBirthStart","userBirthEnd","roleId"})
 	List<UserVo> finduserListContext(int pageStart ,int pageSize,String loginName,String userName,String sex,int userAge,String userBirthStrat,String userBirthEnd,int roleId);
-
+	/**
+	 * 查询所有用户
+	 * @return
+	 */
+	List<UserVo> findAllUser();
 
 }
